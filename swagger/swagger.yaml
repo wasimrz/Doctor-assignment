@@ -1,0 +1,140 @@
+swagger: "2.0"
+schemes:
+  - https
+  - http
+# @swagger on User
+/register/users:
+  post:
+    summary: register a new User.
+    tags: [Register]
+    requestBody:
+      description: Add a new User.
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              userDetails:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: Gopal kumar
+                  email:
+                    type: string
+                    example: gopal@gmail.com
+                  mobile:
+                    type: number
+                    example: 8210450897
+                  countryCode:
+                    type: Number
+                    example: 91
+                  age:
+                    type: number
+                    example: 22
+                  qualification:
+                    type: string
+                    example: MCA
+                  city:
+                    type: string
+                    example: purnea
+
+            required:
+              - name
+              - email
+              - age
+              - qualification
+              - mobile
+              - city
+
+    responses:
+      200:
+        description: Created
+
+# @swagger on Admin
+/register/admins:
+  post:
+    summary: register a new Admin.
+    tags: [Register]
+    requestBody:
+      description: Add a new User.
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              userDetails:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: Gopal kumar
+                  email:
+                    type: string
+                    example: gopal22@gmail.com
+                  mobile:
+                    type: number
+                    example: 8210450887
+                  countryCode:
+                    type: Number
+                    example: 91
+                  password:
+                    type: string
+                    example: suresh@12345
+                  confirmPassword:
+                    type: string
+                    example: suresh@12345
+
+            required:
+              - name
+              - email
+              - password
+              - confirmPassword
+              - mobile
+              - city
+
+    responses:
+      200:
+        description: Created
+# @swagger on Admin login
+/auth/login:
+  post:
+    summary: Login.
+    tags: [Admin Login]
+    requestBody:
+      description: Login.
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              userDetails:
+                type: object
+                properties:
+                  email:
+                    type: string
+                    example: gopal@gmail.com
+                  password:
+                    type: string
+                    example: Suresh@123
+
+            required:
+              - email
+              - password
+
+    responses:
+      200:
+        description: Created
+
+/users:
+  get:
+    security:
+      - ApiKeyAuth: []
+    tags: [Get Users]
+    summary: Get users
+    responses:
+      "200":
+        description: "successful operation"

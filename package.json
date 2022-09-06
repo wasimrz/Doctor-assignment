@@ -1,0 +1,31 @@
+{
+    "name": "assignment",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "NODE_ENV=local nodemon ./server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "wasim reza",
+    "license": "ISC",
+    "dependencies": {
+        "@hapi/boom": "^9.1.4",
+        "bcrypt": "^5.0.1",
+        "config": "^3.3.6",
+        "cors": "^2.8.5",
+        "country-codes-list": "^1.6.8",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "google-libphonenumber": "^3.2.30",
+        "jsonwebtoken": "^8.5.1",
+        "lodash": "^4.17.21",
+        "moment": "^2.29.1",
+        "mongoose": "^6.1.1",
+        "mongoose-auto-increment": "^5.0.1",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.15",
+        "swagger-jsdoc": "^6.2.5",
+        "swagger-ui-express": "^4.5.0"
+    }
+}
